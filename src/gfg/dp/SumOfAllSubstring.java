@@ -1,4 +1,4 @@
-package gfg;
+package gfg.dp;
 
 
 //http://www.geeksforgeeks.org/sum-of-all-substrings-of-a-string-representing-a-number/

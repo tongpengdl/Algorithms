@@ -1,4 +1,4 @@
-package gfg;
+package gfg.dp;
 
 //Given a string, count number of subsequences of the form aibjck, where i >= 1, j >=1 and k >= 1.
 //

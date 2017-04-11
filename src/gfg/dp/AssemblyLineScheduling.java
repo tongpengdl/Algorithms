@@ -1,4 +1,4 @@
-package gfg;
+package gfg.dp;
 
 //http://www.geeksforgeeks.org/dynamic-programming-set-34-assembly-line-scheduling/
 //        A car factory has two assembly lines, each with n stations.
