@@ -35,10 +35,29 @@ public class NumOfSubstringDivisible {
     }
 
     public static void main(String[] args) {
-        String s = "1234";
-        int n = 4;
+        String s = "676";
+        int n = 6;
         //note that an empty string doesn't count into the result, so subtract this case.
         int res1 = countDivisibleNaive(s, n) - 1;
+        int res2 = countDivisibleSubseq(s, n);
         System.out.println(res1);
+        System.out.println(res2);
+    }
+
+    /*
+     * Dynamic programming
+     * dp[i][j] -- number of subsequence from 0 to i (can be inclusive or exclusive) whose remainder divided by n is j
+     */
+    public static int countDivisibleSubseq(String s, int n) {
+        int[][] dp = new int[s.length()][n];
+        dp[0][(s.charAt(0) - '0') % n]++;
+        for (int i = 1; i < s.length(); i++) {
+            dp[i][(s.charAt(i) - '0') % n]++;
+            for (int j = 0; j < n; j++) {
+                dp[i][j] += dp[i - 1][j];
+                dp[i][(j * 10 + s.charAt(i) - '0') % n] += dp[i - 1][j];
+            }
+        }
+        return dp[s.length() - 1][0];
     }
 }
