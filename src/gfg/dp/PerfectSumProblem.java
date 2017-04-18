@@ -52,6 +52,7 @@ public class PerfectSumProblem {
         return res;
     }
 
+    // use dp here to prone. if current sum cannot be get from the rest of the array, simply terminate the recursion
     public static void printSubsetRec(int[] arr, int i, int sum, List<Integer> tmp, List<List<Integer>> res, boolean[][] dp) {
         if (i > arr.length || i == arr.length && sum != 0) {
             return;
